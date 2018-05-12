@@ -55,7 +55,7 @@ func handlerSearch(w http.ResponseWriter, r *http.Request) {
 	// Return a fake post
 	p := &Post{
 		User:"1111",
-		Message:"一生必去的100个地方",
+		Message:"test",
 		Location: Location{
 			Lat:lat,
 			Lon:lon,
