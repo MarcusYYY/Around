@@ -41,7 +41,7 @@ func handlerPost(w http.ResponseWriter, r *http.Request) {
   }
 }
 func handlerSearch(w http.ResponseWriter, r *http.Request) {
-	fmt.Println("Received one request for search")
+	fmt.Println("Received one request for search.")
 	lat, _ := strconv.ParseFloat(r.URL.Query().Get("lat"), 64)
 	lon, _ := strconv.ParseFloat(r.URL.Query().Get("lon"), 64)
 	// range is optional
