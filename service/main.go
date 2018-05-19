@@ -32,7 +32,7 @@ const (
 	PROJECT_ID = "prefab-wonder-203921"
 	BT_INSTANCE = "around-post"
 	// Needs to update this URL if you deploy it to cloud.
-	ES_URL = "http://35.232.2.5:9200"
+	ES_URL = "http://35.193.54.119:9200"
 	BUCKET_NAME = "post-image-203922"
 )
 
