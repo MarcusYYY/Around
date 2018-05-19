@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="5f878d96-5744-45c5-a52c-579539702edf" name="Default" comment="">
       <change type="NEW" beforePath="" afterPath="$USER_HOME$/Desktop/.idea/vcs.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/user.go" />
       <change type="NEW" beforePath="" afterPath="$APPLICATION_CONFIG_DIR$/options/jdk.table.xml" />
       <change type="NEW" beforePath="" afterPath="$APPLICATION_CONFIG_DIR$/options/runner.layout.xml" />
       <change type="NEW" beforePath="" afterPath="$USER_HOME$/Library/Preferences/PyCharm50/options/git.xml" />
@@ -23,6 +24,7 @@
       <change type="DELETED" beforePath="$USER_HOME$/Desktop/499/499/Pill 本地.zip" afterPath="" />
       <change type="DELETED" beforePath="$USER_HOME$/README.md" afterPath="" />
       <change type="DELETED" beforePath="$USER_HOME$/readme.txt" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main.go" afterPath="$PROJECT_DIR$/main.go" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -38,14 +40,22 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="main.go" pinned="false" current-in-tab="true">
+      <file leaf-file-name="main.go" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="232" column="52" lean-forward="true" selection-start-line="232" selection-start-column="52" selection-end-line="232" selection-end-column="52" />
-              <folding>
-                <element signature="e#14#215#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="135">
+              <caret line="9" column="10" lean-forward="false" selection-start-line="9" selection-start-column="10" selection-end-line="9" selection-end-column="10" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="user.go" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/user.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="120">
+              <caret line="8" column="17" lean-forward="true" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -56,6 +66,7 @@
     <findStrings>
       <find>uuid</find>
       <find>ES_URL</find>
+      <find>reflect</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -70,16 +81,19 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/main.go" />
+        <option value="$PROJECT_DIR$/user.go" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="6" />
-    <option name="y" value="102" />
+    <option name="x" value="101" />
+    <option name="y" value="98" />
     <option name="width" value="1400" />
     <option name="height" value="792" />
   </component>
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectReloadState">
     <option name="STATE" value="1" />
   </component>
@@ -379,7 +393,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="6" y="102" width="1400" height="792" extended-state="0" />
+    <frame x="101" y="98" width="1400" height="792" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -423,9 +437,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#14#215#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -433,9 +445,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#14#215#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -443,19 +453,23 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#14#215#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/main.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="232" column="52" lean-forward="true" selection-start-line="232" selection-start-column="52" selection-end-line="232" selection-end-column="52" />
-          <folding>
-            <element signature="e#14#215#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="135">
+          <caret line="9" column="10" lean-forward="false" selection-start-line="9" selection-start-column="10" selection-end-line="9" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/user.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="17" lean-forward="true" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
+          <folding />
         </state>
       </provider>
     </entry>
