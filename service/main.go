@@ -13,13 +13,9 @@ import (
 	"strings"
 	"context"
 	"cloud.google.com/go/storage"
-	"github.com/auth0/go-jwt-middleware"
+	//"github.com/auth0/go-jwt-middleware"
 	"github.com/dgrijalva/jwt-go"
-	"github.com/gorilla/mux"
-	"cloud.google.com/go/bigtable"
-
-
-
+	//"github.com/gorilla/mux"
 )
 var mySigningKey = []byte("secret")
 
@@ -32,7 +28,7 @@ const (
 	PROJECT_ID = "prefab-wonder-203921"
 	BT_INSTANCE = "around-post"
 	// Needs to update this URL if you deploy it to cloud.
-	ES_URL = "http://35.193.54.119:9200"
+	ES_URL = "http://35.184.34.255:9200"
 	BUCKET_NAME = "post-image-203922"
 )
 
@@ -84,23 +80,9 @@ func main() {
 		}
 	}
 
-
-  	fmt.Println("started-service")
-	r := mux.NewRouter()
-
-	var jwtMiddleware = jwtmiddleware.New(jwtmiddleware.Options{
-		ValidationKeyGetter: func(token *jwt.Token) (interface{}, error) {
-			return mySigningKey, nil
-		},
-		SigningMethod: jwt.SigningMethodHS256,
-	})
-
-	r.Handle("/post", jwtMiddleware.Handler(http.HandlerFunc(handlerPost))).Methods("POST")
-	r.Handle("/search", jwtMiddleware.Handler(http.HandlerFunc(handlerSearch))).Methods("GET")
-	r.Handle("/login", http.HandlerFunc(loginHandler)).Methods("POST")
-	r.Handle("/signup", http.HandlerFunc(signupHandler)).Methods("POST")
-
-	http.Handle("/", r)
+	fmt.Println("started-service")
+	http.HandleFunc("/post", handlerPost)
+	http.HandleFunc("/search", handlerSearch)
 	log.Fatal(http.ListenAndServe(":8080", nil))
 
 }
@@ -173,34 +155,34 @@ func handlerPost(w http.ResponseWriter, r *http.Request) {
 	saveToES(p, id)
 
 	// Save to BigTable.
-	saveToBigTable(ctx, p, id)
+	//saveToBigTable(ctx, p, id)
 
 
 }
-func saveToBigTable(ctx context.Context, p *Post, id string){
-
-	// you must update project name here
-	bt_client, err := bigtable.NewClient(ctx, PROJECT_ID, BT_INSTANCE)
-	if err != nil {
-		panic(err)
-		return
-	}
-	tbl := bt_client.Open("post")
-	mut := bigtable.NewMutation()
-	t := bigtable.Now()
-
-	mut.Set("post", "user", t, []byte(p.User))
-	mut.Set("post", "message", t, []byte(p.Message))
-	mut.Set("location", "lat", t, []byte(strconv.FormatFloat(p.Location.Lat, 'f', -1, 64)))
-	mut.Set("location", "lon", t, []byte(strconv.FormatFloat(p.Location.Lon, 'f', -1, 64)))
-
-	err = tbl.Apply(ctx, id, mut)
-	if err != nil {
-		panic(err)
-		return
-	}
-	fmt.Printf("Post is saved to BigTable: %s\n", p.Message)
-}
+//func saveToBigTable(ctx context.Context, p *Post, id string){
+//
+//	// you must update project name here
+//	bt_client, err := bigtable.NewClient(ctx, PROJECT_ID, BT_INSTANCE)
+//	if err != nil {
+//		panic(err)
+//		return
+//	}
+//	tbl := bt_client.Open("post")
+//	mut := bigtable.NewMutation()
+//	t := bigtable.Now()
+//
+//	mut.Set("post", "user", t, []byte(p.User))
+//	mut.Set("post", "message", t, []byte(p.Message))
+//	mut.Set("location", "lat", t, []byte(strconv.FormatFloat(p.Location.Lat, 'f', -1, 64)))
+//	mut.Set("location", "lon", t, []byte(strconv.FormatFloat(p.Location.Lon, 'f', -1, 64)))
+//
+//	err = tbl.Apply(ctx, id, mut)
+//	if err != nil {
+//		panic(err)
+//		return
+//	}
+//	fmt.Printf("Post is saved to BigTable: %s\n", p.Message)
+//}
 
 
 
